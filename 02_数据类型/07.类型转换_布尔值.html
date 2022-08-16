@@ -7,23 +7,26 @@
     <title>Document</title>
     <script>
         /* 
-            使用Boolean()函数来将其他类型转换为布尔值
-                转换情况
-                    数值
-                        0 和 NaN 转换为 false
-                        其余是true
+            显式转换:
+                使用Boolean()函数来将其他类型转换为布尔值
+                    转换情况
+                        数值
+                            0 和 NaN 转换为 false
+                            其余是true
 
-                    字符串
-                        空串 转换为 false
-                        其余是true
+                        字符串
+                            空串 转换为 false
+                            其余是true
 
-                    null 和 undefined 都转换为false
+                        null 和 undefined 都转换为false
 
-                    对象
-                        对象一般会转换为true
+                        对象
+                            对象一般会转换为true
 
-                所有表示空性质,没有的,错误的值都会转换为false
-                    0 NaN 空串 null undefined false
+                    所有表示空性质,没有的,错误的值都会转换为false
+                        0 NaN 空串 null undefined false
+            隐式转换:
+                !!变量
         */
         let a = 1;
         a = Boolean(a);
