@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            布尔值(boolearn)
+                布尔值主要用来逻辑判断
+                布尔值只有true和false
+                使用typeof检查布尔值时会返回"boolean"
+
+            空值(null)
+                空值表示一个空对象
+                空值只有一个null
+                使用typleof检查一个空值时会返回一个"object"
+                使用typeof无法检查空值
+            
+            未定义(Undefind)
+                当声明一个变量而没有赋值时,其值为Undefined
+                Undefined类型的值有且只有它本身
+                使用typeof检查Undefined类型的值时会返回"Undefind"
+
+            符号(Symbol)
+                用来创建一个唯一的标识
+                使用typeof检查符号类型的值时会返回"Symbol"
+
+            JS中原始值一个有7中
+                Number
+                BigInt
+                String
+                Boolean
+                Null
+                Undefined
+                Symbol
+                七种原始值是构成各种数据的基础
+                    原始值在JS中是不可变类型,一旦创建就不能修改,变量的赋值仅仅是改变其存储的内存地址
+        */
+
+        let bool = true;
+
+        let a = null;
+
+        let b;
+        
+        let c = Symbol(); // 调用Symbol()创建了一个符号
+
+        console.log(bool);
+        console.log(typeof bool);
+
+        console.log(a);
+        console.log(typeof a);
+
+        console.log(b);
+        console.log(typeof b);
+
+        console.log(c);
+        console.log(typeof c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

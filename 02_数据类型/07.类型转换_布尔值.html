@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            使用Boolean()函数来将其他类型转换为布尔值
+                转换情况
+                    数值
+                        0 和 NaN 转换为 false
+                        其余是true
+
+                    字符串
+                        空串 转换为 false
+                        其余是true
+
+                    null 和 undefined 都转换为false
+
+                    对象
+                        对象一般会转换为true
+
+                所有表示空性质,没有的,错误的值都会转换为false
+                    0 NaN 空串 null undefined false
+        */
+        let a = 1;
+        a = Boolean(a);
+        console.log(a,typeof a);
+
+        let b = null;
+        b = Boolean(b);
+        console.log(b,typeof b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

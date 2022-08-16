@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            类型转换
+                将一种数据类型转换为其他类型
+
+            转换为字符串
+                调用toString()方法将其他类转换为字符串
+                    由于null和Undefined中没有toString()
+                        所以对其调用toString()时会报错
+                        
+                调用String()函数将其他类型转换为字符串
+                    String()函数可以对null和Undefined生效
+                    对于拥有toString()方法的值调用Sting()函数时
+                        实际就是在调用toString()方法
+                    对于null Undefined,则直接转换为"null" "Undefined"
+        */
+        let a = 10;
+        console.log(typeof a,a);
+
+        let b = a.toString();
+        console.log(typeof b,b);
+
+        let c = String(a);
+        console.log(typeof c,c)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
