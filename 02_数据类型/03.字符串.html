@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            字符串
+                在js中使用单引号或双引号来表示字符串
+                字符串不能直接换行需要在行末添加\
+
+                转义字符 \
+                    \" = "
+                    \' = '
+                    \\ = \
+                    \t = 制表符tab
+                    \n = 换行
+
+                模板字符串
+                    使用反单引号`来表示模板字符串
+                    模板字符串可以直接换行
+                    模板字符串可以嵌入变量
+
+                使用typeof检查一个字符串返回值都是String
+        */
+        let a = '这是字符串';
+
+        let b = '转义字符\\';
+
+        let c = `模板字符串`;
+
+        let name = '小明';
+
+        let str = `你好,${name}`;
+
+        console.log(str);
+
+        console.log(`b = ${b}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
