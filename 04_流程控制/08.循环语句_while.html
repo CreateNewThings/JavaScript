@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            循环语句
+                通过循环语句可以使指定代码反复执行
+                js中一共有三种循环语句
+                    while语句
+                    do-while语句
+                    for语句
+                while语句
+                    语法
+                        while(条件表达式){
+                            语句...
+                        }
+
+                    执行流程
+                        while语句执行时,会先对条件表达式进行判断
+                            如果为true,则执行循环体,执行完毕,结束判断,如此往复
+                            直到条件表达式的结果为false,循环结束        
+        */
+
+        /* while(true){
+            alert("1");
+        } 
+        死循环,不控制浏览器容易挂
+        */
+
+        /* 
+            通常编写一个循环,要有三个条件
+                初始化表达式(初始化变量)
+                条件表达式(设置循环运行的条件)
+                更新表达式(修改初始化表达式)
+        */
+        let a = 0;
+        while(a < 5){
+            console.log(a);
+            a++;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

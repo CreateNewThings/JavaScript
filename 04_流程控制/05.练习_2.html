@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            练习2
+                从键盘输入小明的期末成绩:
+                    当成绩为100时，'奖励一辆BMW'
+                    当成绩为[80-99]时，'奖励一台iphone'
+                    当成绩为[60-79]时，'奖励一本参考书'
+                    其他时，什么奖励也没有
+        */
+
+        let achievement = +prompt("请输入成绩(0~100)");
+        if(isNaN(achievement) || achievement < 0 || achievement > 100){
+            alert("输入有误,请输入正确的成绩");
+        } else {
+            if(achievement === 100){
+                alert('奖励一辆BMW');
+            } else if (achievement >= 80){
+                alert('奖励一台iphone');
+            } else if(achievement >= 60){
+                alert('奖励一本参考书');
+            } else{
+                alert('奖励一套作业大礼包');
+            } 
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
