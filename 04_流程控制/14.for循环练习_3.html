@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            获取用户输入的大于1的整数（暂时不考虑输错的情况）
+                然后编写代码检查这个数字是否是质数，并打印结果
+
+            质数
+                - 一个数如果只能被1和它本身整除，那么这个数就是质数
+                - 1既不是质数也不是合数
+        */
+        let num = +prompt("请输入一个大于1的整数");
+        let result = true;
+        if(!isNaN(num) && num > 1){
+            for(let i = 2; i < num/(2 ** 0.5); i++){
+                if(num % i === 0){
+                    result = false;
+                    break;
+                }
+            }
+
+            if(result){
+                alert(`${num}是质数`);
+            } else {
+                alert(`${num}不是质数`);
+            }
+        } else {
+            alert("输入格式错误请重新输入")
+        }  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

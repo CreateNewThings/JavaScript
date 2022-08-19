@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            for循环
+                for循环和while没有本质区别,都是用来反复执行代码
+                不同点就是语法结构,for循环更加清晰
+                语法
+                    for(初始化表达式; 条件表达式; 更新表达式){
+                        语句...
+                    }
+                
+                执行流程
+                    执行初始化表达式,初始化变量
+                    执行条件表达式,判断循环是否执行
+                    判断结果为true,则执行循环体
+                    执行更新表达式,对初始化变量进行修改
+                    重复执行,直到判断为false为止
+
+                初始化表达式,在循环的整个生命周期中只会执行一次
+                for循环中的三个表达式都可以省略
+                使用let在for循环的()中声明的变量是局部变量,只能在for循环内部访问
+                    使用var在for循环的()中声明的变量可以在for循环的外部访问
+                
+                
+        */
+
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
