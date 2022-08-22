@@ -15,6 +15,9 @@
                 函数表达式
                     const 变量 = function
                 箭头函数
+                    () => {
+                        语句...
+                    }
         */
 
         function fn(){
@@ -24,8 +27,14 @@
         console.log(typeof fn);
 
         const fn2 = function(){
-
+            console.log("函数表达式");
         }
+
+        const fn3 = () => {
+            console.log("箭头函数");
+        }
+
+        const fn4 = () => console.log("箭头函数");
     </script>
 </head>
 <body>
