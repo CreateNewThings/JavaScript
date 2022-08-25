@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        const fn = (a, b) => {
+            console.log("a = ",a);
+            console.log("b = ",b);
+        }
+
+        // 当且仅当箭头函数只有一个函数时，可以省略()
+        const fn2 = a => {
+            console.log("a = ",a);
+        }
+
+        // 定义参数时,可以为参数指定默认值
+        const fn3 = (a=10, b=20, c=30) => {
+            console.log("a = ",a);
+            console.log("b = ",b);
+            console.log("c = ",c);
+        }
     </script>
 </head>
 <body>

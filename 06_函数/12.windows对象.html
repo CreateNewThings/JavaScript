@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Window对象
+                在浏览器中,浏览器为我们提供了一个Window对象,可以直接访问
+                Window对象代表的是北半球窗口,通过该对象可以对浏览器窗口进行各种操作
+                    除此之外Window对象还负责存储js中的内置对象和浏览器的宿主对象
+                Window对象的属性可以通过window对象啊访问,也可以直接访问
+                函数可以认为是window对象的方法
+        */
+        window.a = 10; // 向window对象中添加的属性会自动成为全局变量
+
+        /* 
+            var 用来声明变量,作用和let相同,但是var不具有块作用域
+                在全局中使用var声明变量,都会作为window对象的属性保存
+                 使用function声明的函数,都会作为window的方法保存 
+        */
+
+        var b = 20; // window.b = 20
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
