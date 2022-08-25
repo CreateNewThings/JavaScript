@@ -19,10 +19,19 @@
         /* 
             var 用来声明变量,作用和let相同,但是var不具有块作用域
                 在全局中使用var声明变量,都会作为window对象的属性保存
-                 使用function声明的函数,都会作为window的方法保存 
+                使用function声明的函数,都会作为window的方法保存 
+                使用let声明的变量不会存储在window，而是一个无法直接访问的地方
         */
 
         var b = 20; // window.b = 20
+
+        function fn2(){
+            // var d = 10; // var虽然没有块作用域，但有函数作用域
+            d = 10; // 在局部作用域中,如果没有使用var或let声明变量,则变量会自动成为window对象的属性,也就是全局变量
+        }
+
+        fn2();
+        console.log(d);
         
     </script>
 </head>

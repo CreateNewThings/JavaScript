@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            变量的提升
+                使用var声明的变量,它会在所有代码执行前会被声明,但是不执行赋值
+                    所以我们可以在变量声明前就访问变量
+
+            函数的提升
+                使用函数声明创建的函数,会在其他代码执行前被创建
+
+            let声明的变量实际也会提升,但是在赋值之前解释器禁止访问该变量
+        */
+        console.log(a);
+        var a = 10;// 赋值在这执行
+        // a = 10; // window.a = 10
+
+        fn();
+        function fn(){
+            alert("我是fn函数");
+        }
+
+        // fn2();   // var将fn2这个变量进行提升,但是函数并没有提前创建
+        // var fn2 = function(){
+        //     alert(1);
+        // }
+
+        // fn2(); //无法提前使用
+        // const fn2 = function(){
+        //     alert("我是fn2函数")
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
