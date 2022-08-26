@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            箭头函数
+                ([参数]) => 返回值
+            例子
+                无参箭头函数 () => 返回值
+                一个参数 a => 返回值
+                多个参数 (a, b...) => 返回值
+
+                只有一个语句的函数 () => 返回值
+                只返回一个对象的函数 () => ({...})
+                有多行语句的函数 () => {
+                    语句...
+                    return 返回值
+                }
+        */
+
+        function fn(){
+            console.log("fn -->",this);
+        }
+
+        const fn2 = () => {
+            console.log("fn2 -->",this);
+        }
+
+        fn(); // window
+        fn2(); // window
+
+        const obj = {
+            name:'孙悟空',
+            fn,
+            fn2
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
