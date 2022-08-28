@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象编程(OOP)
+                程序是干啥的
+                    程序就是对现实世界的抽象(人物照片就是对人的抽象)
+                对象是干啥的
+                    一个事物抽象到程序中后就变成了对象
+                    在程序的世界中,一切皆是对象
+                面向对象的编程
+                    面向对象的编程指程序中所有的操作都是通过对象来完成的
+                    做任何事情之前都需要找到它的对象,然后通过对象来完成各种操作
+        */
+
+        /* 
+            心仪的女人 王老五
+                一个事物通常由两部分的组成 数据和功能
+                一个对象由两部分组成 属性和方法
+                事物的数据到了对象中,体现为属性
+                事物的功能到了对象中,体现为方法
+
+                数据
+                    姓名,年龄,身高,体重...
+
+                功能
+                    吃,喝,拉,撒,睡...
+        */
+
+        const five = {
+            // 添加属性
+            name:"王老五",
+            age:20,
+            height:180,
+            weight:50,
+
+            // 添加方法
+            eat(){
+                console.log(this.name + "吃饭");
+            },
+            drink(){
+                console.log(this.name + "喝水");
+            },
+            sleep(){
+                console.log(this.name + "睡觉");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

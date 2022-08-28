@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面对对象的特点
+                封装,继承和多态
+
+            封装
+                对象就是一个用来存储不同属性的容器
+                对象不仅负责属性,还要负责数据的安全
+                直接添加到对象中的属性,并不安全,因为它们可以被任意修改
+                如何确保数据的安全
+                    私有化数据
+                        将需要保护的数据设置为私有,只能在类内部使用
+                    提供setter和getter方法来开放对数据的操作
+                        属性设置私有,通过getter setter方法操作属性带来的好处
+                            可以控制属性的读写权限
+                            可以在方法中对属性的值进行验证
+                    封装主要用来保证数据的安全
+                    实现封装的方式
+                        属性私有化 加#
+                        通过getter和setter方法来操作属性
+                            get 属性名(){
+                                return this.#属性名
+                            }
+
+                            set 属性名(参数){
+                                this.#属性名 = 参数
+                            }
+        */
+
+        class Person{
+            #address = "花果山"; // 使用#开头的属性就成为私有属性,私有属性只能在类内部访问
+
+            #name
+            #age
+            #gender
+
+            constructor(name, age, gender){
+                this.#name = name;
+                this.#age = age;
+                this.#gender = gender;
+            }
+
+            sayHello(){
+                console.log(this.name);
+            }
+
+            // getter 方法,用来读取属性
+            getName(){
+                return this.name;
+            }
+
+            // setter方法,用来设置属性
+            setName(name){
+                this.name = name;
+            }
+
+            getAge(){
+                return this.age;
+            }
+
+            setAge(age){
+                if(age >= 0){
+                    this.age = age;
+                }
+            }
+
+            get gender(){
+                return this.#gender;
+            }
+
+            set gender(gender){
+                this.#gender = gender;
+            }
+        }
+
+        const p1 = new Person("孙悟空", 18, "男")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

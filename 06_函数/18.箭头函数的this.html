@@ -20,6 +20,9 @@
                     语句...
                     return 返回值
                 }
+
+            箭头函数没有自己的this，它的this由外层作用域决定
+                箭头函数的this和它的调用方式无关
         */
 
         function fn(){
@@ -35,9 +38,26 @@
 
         const obj = {
             name:'孙悟空',
-            fn,
-            fn2
+            fn, // 属性名和属性值相同时可以简写
+            fn2,
+            sayHello(){
+                console.log(this.name);
+
+                /* function t(){
+                    console.log("t --> ", this);
+                }
+                t(); // window 以函数形式调用 */
+
+                const t2 = () => {
+                    console.log("t2 --> ",this);
+                }
+                t2(); // obj
+            }
         }
+        obj.fn(); // obj
+        obj.fn2(); //window
+
+        obj.sayHello();
     </script>
 </head>
 <body>
