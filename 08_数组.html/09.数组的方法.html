@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = ["孙悟空", "猪八戒", "沙和尚"];
+
+        /* 
+            push()
+                向数组的末尾添加一个或多个元素,并返回新数组的长度
+            pop()
+                删除并返回数组的最后一个元素(被删除的元素)
+            unshift()
+                向数组的开头添加一个或多个元素,并返回新的长度
+            shift()
+                删除并返回数组的第一个元素
+            splice()
+                可以删除,插入,替换数组中的元素
+                参数
+                    删除/插入的起始位置
+                    删除/替换的数量
+                    要插入的元素
+                返回值
+                    返回被删除的元素
+            reverse()
+                反转数组
+        */
+
+        let result = arr.push("唐僧", "白骨精");
+
+        // console.log(result);
+        // console.log(arr);
+
+        arr.pop();
+        // console.log(arr);
+
+        arr.unshift("牛魔王");
+        
+        arr.shift();
+
+        arr = ["孙悟空", "猪八戒", "沙和尚"];
+        result = arr.splice(1, 2); // 删除两个
+        result = arr.splice(1, 0, "牛魔王"); // 插入
+        result = arr.splice(1, 1, "牛魔王"); // 替换一个
+
+        // console.log(arr);
+        // console.log(result);
+
+        arr = ["a", "b", "c", 'd'];
+        arr.reverse();
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

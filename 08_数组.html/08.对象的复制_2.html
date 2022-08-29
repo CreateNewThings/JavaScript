@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = ["孙悟空", "猪八戒", "沙和尚"];
+
+        const arr2 = arr.slice()
+
+        // console.log(arr === arr2); // false
+        /* 
+            ...(展开运算符)
+                可以将一个数组中的元素展开到另一个数组中或者作为函数的参数传递
+        */
+
+        // const arr3 = [...arr]; // 相当于const arr3 = [arr[0], arr[1], arr[2]];
+        const arr3 = ["唐僧", ...arr, "白骨精"];
+
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+
+        const arr4 = [10, 20, 30];
+
+        let result = sum(...arr4);
+
+        console.log(result);
+
+        /* 
+            对象的复制(浅复制)
+                Object.assign(目标对象, 被复制的对象)
+                将被复制对象中的属性复制到目标对象里,并将目标对象返回
+
+            也可以使用展开运算符对对象进行复制
+
+        */
+        const obj = {name: "孙悟空"}
+
+        // const obj2 = Object.assign({}, obj);
+        const obj2 = {address: "花果山", age: 28}
+
+        Object.assign(obj2, obj); // 同名属性的属性值会被较后面的属性值覆盖
+
+        console.log(obj2);
+
+        const obj3 = {age: 18,...obj} // 将obj中的属性在新对象中展开,同名属性的属性值会被较后面的属性值覆盖
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
