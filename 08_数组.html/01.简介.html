@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组(Array)
+                数组也是一种复合数据类型,在数组可以存储多个不同类型的数据
+                数组中存储的是有序的数据,数组中的每个数据都有一个唯一的索引
+                    可以通过索引来操作获取数据
+                数组中存储的数据叫做元素
+                索引(index)是一组大于0的整数
+                创建数组
+                    通过Array()来创建数组
+
+                向数组中添加元素
+                    语法
+                        数组[索引] = 元素;
+
+                读取数组中的元素
+                    语法
+                        数组[索引]
+                            如果读取了一个不存在的元素,不会报错而是返回"undefined"
+
+                length
+                    获取数组的长度
+                    获取的实际值就是数组的最大索引 + 1
+                    向数组的最后添加元素
+                        数组[数组.length] = 元素;
+        */
+
+        const obj = {name: "孙悟空", age: 18};
+
+        const arr = new Array();
+        const arr2 = []; // 数组字面量
+
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        
+        // 使用数组时,应避免非连续数组,影响性能
+        // arr[10] = 100;
+
+        console.log(arr);
+        console.log(arr[0]);
+
+        // console.log(typeof arr); // "Object"
+
+        console.log(arr.length);
+
+        arr[arr.length] = 30;
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
