@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const personArr = [
+            new Person("孙悟空", 18),
+            new Person("沙和尚", 19),
+            new Person("红孩儿", 8)
+        ]
+
+        // filter()函数用来对数组进行过滤
+        /* 
+            目前我们的函数只能过滤出数组中age属性小于18的对象
+                我们希望过滤更加灵活
+                    过滤数组中age大于18的对象
+                        age大于60的对象
+                        age大于n的对象
+                    过滤数组中的name为xxx的对象
+                    过滤数组中的偶数
+                    ...
+
+            一个函数的参数也可以是函数
+                如果将函数做为参数传递,那么我们就称为回调函数(callback)
+        */
+        function filter(arr, cb) {
+
+            const newArr = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (cb(arr[i])) {
+                    newArr.push(arr[i]);
+                }
+            }
+
+            return newArr;
+        }
+
+        function fn(a) {
+            return a.age < 18;
+        }
+        
+        result = filter(personArr, fn);
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
