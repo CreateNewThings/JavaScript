@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const obj = {name: "孙悟空", age: 18, gender: "男"};
+
+        // let {name, age, gender} = obj; // 声明变量同时解构对象
+
+        let name, age, gender;
+
+        ({name, age, gender} = obj); // 添加括号防止{}中的内容被解析为代码块 
+
+        console.log(name, age, gender);
+
+        // let {address} = obj; // 没有的相应属性返回undefined
+
+        let {name: a, age: b, gender: c, address:d = "花果山"} = obj; //  可以通过冒号设置别名,等号设置默认值
+
+        console.log(a, b, c, d);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
