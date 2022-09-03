@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CH">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,8 @@
             递归
                 调用自身的函数被称为递归函数
                 递归的作用和循环时基本一致的
+                不同点在于递归的思路比较清晰简介
+                而循环的执行性能比较好
         */
 
         // 创建一个函数,可以用来求任意数的阶乘
@@ -19,20 +22,46 @@
             2!1X2=2
             3!1X2X3=6
             ...
+
+            递归解决阶乘思路
+                递归的核心思想是将问题拆分
+
+            编写递归一定需要的两个要件
+                基线条件 递归终止条件
+                递归条件 如何对问题进行拆分
         */
 
-        function jieCheng(num){
+        function jieCheng(num) {
             // 创建一个变量用了记录结论
             let result = 1;
-            for(let i = 2; i <= num; i++){
+            for (let i = 2; i <= num; i++) {
                 result *= i;
             }
 
             return result;
         }
+
+        let result = jieCheng(3);
+        console.log(result);
+
+        function jieCheng2(num) {
+            // 基线条件
+            if (num === 1) {
+                return 1;
+            }
+
+            // 递归条件
+            // num! = (num-1)! * num
+            return jieCheng2(num - 1) * num;
+        }
+
+        result = jieCheng2(4);
+        console.log(result);
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            一对兔子出生后两个月每个月可以生一对小兔子
+                计算第n个月的兔子数量
+
+                规律:当前数等于前两数之和(斐波那契数列)
+        */
+
+        function tuZi(mouth) {
+            if (mouth === 1 || mouth === 2) {
+                return 1;
+            }
+
+            return tuZi(mouth - 1) + tuZi(mouth - 2);
+        }
+
+        let result = tuZi(10);
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
