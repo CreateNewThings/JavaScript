@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = "全局a";
+
+        /* 
+            函数的外层作用域,早函数创建时就已经确定(词法作用域)
+                与调用位置无关
+
+            闭包利用词法作用域
+        */
+        
+        function fn(){
+            console.log(a); // 全局a
+        }
+
+        function fn2(){
+            let a = "fn2a";
+
+            fn(); 
+        }
+
+        fn2(); // 全局a
+
+        function fn3(){
+            let a = "fn3a";
+
+            function fn4(){
+                console.log(a);
+            }
+
+            return fn4;
+        }
+
+        let result = fn3();
+        result(); // fn3a
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

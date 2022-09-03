@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            递归
+                调用自身的函数被称为递归函数
+                递归的作用和循环时基本一致的
+        */
+
+        // 创建一个函数,可以用来求任意数的阶乘
+
+        /* 
+            1!1=1
+            2!1X2=2
+            3!1X2X3=6
+            ...
+        */
+
+        function jieCheng(num){
+            // 创建一个变量用了记录结论
+            let result = 1;
+            for(let i = 2; i <= num; i++){
+                result *= i;
+            }
+
+            return result;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
