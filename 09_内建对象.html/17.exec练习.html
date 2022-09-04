@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            djlkfj15368765667sdlk17453456343fjlkd18342342342fjsldjklj
+
+            先用自己的语言来描述
+                1开头 3-9第二位 9位任意数字
+        */
+        let str = "djlkfj15368765667sdlk17453456343fjlkd18342342342fjsldjklj";
+
+        let reg = /(1[3-9]\d)\d{4}(\d{4})/g;
+
+        let result;
+
+        while (result = reg.exec(str)) {
+            console.log(result[1]+"****"+result[2]);
+        }
+
+        reg = /^1[3-9]\d{9}&/; // 用于检查一般使用完全匹配
+
+        console.log(reg.test("13203984039"));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

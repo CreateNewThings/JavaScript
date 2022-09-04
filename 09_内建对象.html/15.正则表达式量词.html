@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            量词
+                {m} 正好m个
+                {m,} 至少m个
+                {m,n} m-n个
+                + 一个以上,相当于{1,}
+                * 任意数量的a
+                ? 0-1次
+        */
+
+        let re = /a{3}/;
+
+        let result = re.test("a"); // false
+
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

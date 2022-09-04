@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            split()
+                可以根据正则表达式来对一个字符拆分
+            search()
+                可以去搜索符合正则表达式的内容第一次在字符串中出现的位置(是否存在)
+            replace()
+                根据正则表达式替换字符串中的指定内容
+            match()
+                根据正则表达式去匹配字符串中符合要求的内容,不会提取分组数据
+            matchAll()
+                根据正则表达式去匹配字符串中符合要求的内容(必须设置g 全局匹配)
+                它返回的是一个迭代器,用for-of遍历迭代器,可以得到exec相同的结果,可以得到分组数据
+        */
+
+        let str = "a@b@c@d";
+
+        let result = str.split("@");
+
+        str = "孙悟空abc猪八戒adc沙和尚";
+
+        result = str.split(/a[bd]c/);
+
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
