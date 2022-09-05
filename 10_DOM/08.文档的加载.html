@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            网页在自上向下加载的,如果将js代码编写到网页的上面
+                js代码在执行时,网页还没有加载完毕,这时会出现无法获取到DOM对象的情况
+
+                window.onload 事件会在窗口中的内容加载完毕之后才触发
+                document的DOMContentLoaded 事件会在当前文档加载完毕之后触发
+    
+                如何解决这个问题
+                    将script标签编写到body的最后(推荐)
+                    将代码编写到window.onload的回调函数中
+                    将代码编写到document对象的DOMContentLoded的回调函数中(执行时机更早)
+                    将代码编写到外部的js文件中,然后以defer的形式进行引入(执行时机早于DOMContentLoded)(推荐)
+        */
+        // window.onload = function () {
+        //     const btn = document.getElementById("btn");
+        //     console.log(btn);
+        // }
+
+        // window.addEventListener("load", function () {
+        //     const btn = document.getElementById("btn");
+        //     console.log(btn);
+        // })
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const btn = document.getElementById("btn");
+        //     console.log(btn);
+        // })
+
+    </script>
+
+    <script src="./script/script.js" defer></script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <script>
+        // const btn = document.getElementById("btn");
+        // console.log(btn);
+    </script>
+</body>
+
+</html>
