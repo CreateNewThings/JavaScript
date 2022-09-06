@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            border: 1px black solid;
+            padding: 10px 0;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            /* 
+                点击删除超链接后,删除当前的员工信息
+            */
+
+            const delEmpHandler = function () {
+                /* 
+                    本次练习中的超链接,我们不希望其发生跳转,但是跳转是超链接的默认行为
+                    只要点击超链接就会触发页面跳转,事件中可以通过取消默认行为来阻止超链接的跳转
+                    使用return false来取消默认行为,只在xxx.xxx = function(){}这种形式绑定的事件中才适用
+                */
+                // 删除当前员工信息 删除当前超链接所在tr
+
+                // this表示当前点击的超链接
+                // 弹出一个友好的提示
+
+                // 获取要删除的员工姓名
+                const tr = this.parentNode.parentNode;
+                const empName = tr.firstElementChild.textContent;
+                // 删除tr
+                if (confirm(`你是否要删除[${empName}]`)) {
+                    this.parentNode.parentNode.remove();
+                }
+
+                return false;
+            }
+            // 获取所有的超链接
+            const links = document.links;
+            // 为超链接绑定响应函数
+            for (let i = 0; i < links.length; i++) {
+                links[i].onclick = delEmpHandler;
+
+                // links[i].addEventListener("click", function(){
+                //     return false; // 无法取消默认行为
+                // })
+            }
+
+            /* 
+                点击按钮后将用户信息插入到表格中
+            */
+
+            // 获取tbody
+            const tbody = document.querySelector("tbody");
+
+            const btn = document.getElementById("btn");
+            btn.onclick = function () {
+                // 获取用户输入数据
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const salary = document.getElementById("salary").value;
+
+                // 将获取到的数据设置为DOM对象
+                // 这种写法,任意被xss攻击
+                tbody.insertAdjacentHTML(
+                    "beforeend",
+                    `<tr>
+                        <th>${name}</th>
+                        <th>${email}</th>
+                        <th>${salary}</th>
+                        <th><a href="javascript:;">删除</a></th>
+                    </tr>`
+                )
+
+                // 由于上面的超链接是新添加的,所以它的上面并没有绑定响应函数,所以新添加的员工无法删除
+                // 解决方式 为新添加的超链接单独绑定响应函数
+                links[links.length - 1].onclick = delEmpHandler;
+                return false;
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <table>
+            <tbody>
+                <tr>
+                    <th>姓名</th>
+                    <th>邮件</th>
+                    <th>薪资</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <th>孙悟空</th>
+                    <th>fkdjhg@dsf.com</th>
+                    <th>10000</th>
+                    <th><a href="javascript:;">删除</a></th>
+                </tr>
+                <tr>
+                    <th>猪八戒</th>
+                    <th>wopei@dj.com</th>
+                    <th>8000</th>
+                    <th><a href="javascript:;">删除</a></th>
+                </tr>
+                <tr>
+                    <th>沙和尚</th>
+                    <th>pirpoik@xkdj.com</th>
+                    <th>6000</th>
+                    <th><a href="javascript:;">删除</a></th>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="#">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">邮件</label>
+                <input type="text" id="email">
+            </div>
+            <div>
+                <label for="salary">薪资</label>
+                <input type="number" id="salary">
+            </div>
+            <button type="button" id="btn">添加</button>
+        </form>
+    </div>
+</body>
+
+</html>
