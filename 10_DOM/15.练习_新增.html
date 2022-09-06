@@ -83,7 +83,7 @@
                 const salary = document.getElementById("salary").value;
 
                 // 将获取到的数据设置为DOM对象
-                // 这种写法,任意被xss攻击
+                // 这种写法,容易被xss攻击
                 tbody.insertAdjacentHTML(
                     "beforeend",
                     `<tr>
