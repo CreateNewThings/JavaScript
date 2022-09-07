@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #box2 {
+            width: 500px;
+            height: 500px;
+            background-color: orange;
+        }
+
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+
+        #box4 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+
+    <div id="box2"></div>
+
+    <div id="box3">
+        <div id="box4"></div>
+    </div>
+
+    <script>
+        /* 
+            使小绿球可以跟随鼠标一起移动
+
+            事件的冒泡和元素的样式无关,只和结构相关
+        */
+        const box1 = document.getElementById("box1");
+        const box3 = document.getElementById("box3");
+        const box4 = document.getElementById("box4");
+
+        document.addEventListener("mousemove", function (event) {
+            box1.style.left = event.clientX + "px";
+            box1.style.top = event.clientY + "px";
+        });
+
+        box3.onclick = function () {
+            alert(3);
+        };
+
+        box4.onclick = function () {
+            alert(4);
+        };
+    </script>
+</body>
+
+</html>
