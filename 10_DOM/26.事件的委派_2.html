@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">点击</button>
+
+    <hr>
+
+    <ul id="list">
+        <li><a href="javascript:;">链接1</a></li>
+        <li><a href="javascript:;">链接2</a></li>
+        <li><a href="javascript:;">链接3</a></li>
+        <li><a href="javascript:;">链接4</a></li>
+    </ul>
+
+    <script>
+        /* 
+            只绑定一次事件,既可以让所有的超链接,包括当前的和未来新建的超链接都具有这些事件
+
+            思路
+                将事件统一绑定给document,这样点击超链接时由于事件的冒泡,
+                    会导致document上的点击事件被触发,这样只绑定一次,所有的超链接都会具有这些事件
+
+            委派就是将本该绑定给多个元素的事件,统一绑定给document,这样可以降低代码复杂度方便维护
+        */
+
+        const list = document.getElementById("list");
+        const btn = document.getElementById("btn");
+
+        // 获取list中所有链接
+        const links = list.getElementsByTagName("a");
+
+        document.addEventListener("click", function (event) {
+            // 在执行函数之前,先判断一个事件是谁触发的
+            // 检查event.target是否在links中存在
+
+            // console.log(Array.from(links));
+            
+            if([...links].includes(event.target)){
+                alert(event.target.textContent);
+            }
+        });
+
+        // 点击按钮后,在ul中添加一个新的li
+        btn.addEventListener("click", () => {
+            list.insertAdjacentHTML("beforeend", '<li><a href="javascript:;">新链接</a></li>')
+        })
+    </script>
+</body>
+
+</html>

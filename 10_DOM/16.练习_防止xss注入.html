@@ -36,37 +36,37 @@
                 点击删除超链接后,删除当前的员工信息
             */
 
-            const delEmpHandler = function () {
-                /* 
-                    本次练习中的超链接,我们不希望其发生跳转,但是跳转是超链接的默认行为
-                    只要点击超链接就会触发页面跳转,事件中可以通过取消默认行为来阻止超链接的跳转
-                    使用return false来取消默认行为,只在xxx.xxx = function(){}这种形式绑定的事件中才适用
-                */
-                // 删除当前员工信息 删除当前超链接所在tr
-
-                // this表示当前点击的超链接
-                // 弹出一个友好的提示
-
-                // 获取要删除的员工姓名
-                const tr = this.parentNode.parentNode;
-                const empName = tr.firstElementChild.textContent;
-                // 删除tr
-                if (confirm(`你是否要删除[${empName}]`)) {
-                    this.parentNode.parentNode.remove();
-                }
-
-                return false;
-            }
             // 获取所有的超链接
             const links = document.links;
             // 为超链接绑定响应函数
-            for (let i = 0; i < links.length; i++) {
-                links[i].onclick = delEmpHandler;
+            document.onclick = function (event) {
+                console.log(event.target);
+                if ([...links].includes(event.target)) {
+                    /* 
+                        本次练习中的超链接,我们不希望其发生跳转,但是跳转是超链接的默认行为
+                        只要点击超链接就会触发页面跳转,事件中可以通过取消默认行为来阻止超链接的跳转
+                        使用return false来取消默认行为,只在xxx.xxx = function(){}这种形式绑定的事件中才适用
+                    */
+                    // 删除当前员工信息 删除当前超链接所在tr
+                    const tr = event.target.parentNode.parentNode;
 
-                // links[i].addEventListener("click", function(){
-                //     return false; // 无法取消默认行为
-                // })
-            }
+                    // 获取要删除的员工姓名
+                    const empName = tr.firstElementChild.textContent;
+
+                    // 弹出一个友好的提示
+                    // 删除tr
+                    if (confirm(`你是否要删除[${empName}]`)) {
+                        tr.remove();
+                    }
+
+                    return false;
+                }
+            };
+
+            // links[i].addEventListener("click", function(){
+            //     return false; // 无法取消默认行为
+            // })
+
 
             /* 
                 点击按钮后将用户信息插入到表格中
@@ -93,7 +93,7 @@
                 //         <th><a href="javascript:;">删除</a></th>
                 //     </tr>`
                 // )
-                
+
                 // 创建tr
                 const tr = document.createElement("tr");
                 // 创建td
@@ -116,7 +116,6 @@
 
                 // 由于上面的超链接是新添加的,所以它的上面并没有绑定响应函数,所以新添加的员工无法删除
                 // 解决方式 为新添加的超链接单独绑定响应函数
-                links[links.length - 1].onclick = delEmpHandler;
                 return false;
             }
 
